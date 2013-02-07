@@ -22,7 +22,7 @@ $ bundle
 $ guard init cane
 ```
 
-This will place the following in your Guardfile:
+This will place the following in your `Guardfile`:
 
 ```rb
 guard :cane, cli: "--color" do
@@ -30,6 +30,13 @@ guard :cane, cli: "--color" do
 end
 ```
 
-Also recommended is adding a `.cane` file to your project. See
-[square/cane](https://github.com/square/cane#usage) for details.
+It's also recommended to add a `.cane` file to your project:
+
+```
+--abc-max 10
+--no-doc
+--style-exclude spec/**/*
+```
+
+See [square/cane](https://github.com/square/cane#usage) for detailed usage.
 
