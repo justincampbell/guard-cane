@@ -1,19 +1,23 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'guard-cane/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "guard-cane"
-  gem.version       = Guard::Cane::VERSION
+  gem.name          = 'guard-cane'
+  gem.version       = '0.1.0.pre'
   gem.authors       = ["Justin Campbell"]
   gem.email         = ["justin@justincampbell.me"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.summary       = "Guard plugin for Cane"
+  gem.description   = "Guard::Cane automatically runs Cane when files change"
+  gem.homepage      = "https://github.com/justincampbell/guard-cane"
 
   gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
+
+  gem.add_dependency 'cane'
+  gem.add_dependency 'guard'
+
+  gem.add_development_dependency 'guard-rspec'
+  gem.add_development_dependency 'rake'
+  gem.add_development_dependency 'rspec'
 end

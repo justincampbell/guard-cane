@@ -1,29 +1,31 @@
 # Guard::Cane
 
-TODO: Write a gem description
+Guard::Cane automatically runs [Cane](https://github.com/square/cane#usage)
+when files change.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Put this in your Gemfile:
 
-    gem 'guard-cane'
+```rb
+gem 'guard-cane'
+```
 
-And then execute:
+And then install with:
 
-    $ bundle
+```sh
+$ bundle
+$ guard init cane
+```
 
-Or install it yourself as:
+This will place the following in your Guardfile:
 
-    $ gem install guard-cane
+```rb
+guard :cane, cli: "--color" do
+  watch(/.*\.rb/) 
+end
+```
 
-## Usage
+Also recommended is adding a `.cane` file to your project. See
+[square/cane](https://github.com/square/cane#usage) for details.
 
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
