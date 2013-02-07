@@ -10,7 +10,9 @@ when files change.
 Put this in your Gemfile:
 
 ```rb
-gem 'guard-cane'
+group :development
+  gem 'guard-cane'
+end
 ```
 
 And then install with:
